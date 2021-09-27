@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from '../artist';
+import { ARTISTS } from '../mock-artists';
 
 @Component({
   selector: 'app-artists',
@@ -7,10 +8,8 @@ import { Artist } from '../artist';
   styleUrls: ['./artists.component.scss']
 })
 export class ArtistsComponent implements OnInit {
-  artist: Artist = {
-    id: 1, 
-    name: 'Leonardo'
-  }
+
+  artists = ARTISTS;
 
   constructor() { }
 

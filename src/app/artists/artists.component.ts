@@ -16,4 +16,9 @@ export class ArtistsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedArtist?: Artist;
+
+  onSelect(hero: Artist): void {
+    this.selectedArtist = hero;
+  }
 }

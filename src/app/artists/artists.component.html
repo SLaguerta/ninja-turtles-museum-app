@@ -1,6 +1,18 @@
 <h2>The Artists Who Inspired the Ninjas</h2>
+<!-- Will want to itrate through images (from the API?) and the list of artists (from the DB)
+<div *ngFor="let artist of artists">
+    <p> {{artist.name}}
+    </p>
+</div>
+-->
 <ul>
-    <li *ngFor="let artist of artists">{{artist.name}}
+    <li *ngFor="let artist of artists">
+        {{artist.name}}
     </li>
 </ul>
 
+
+<div>
+    <h3>Michelangelo</h3>
+    <img src="assets/images/michelangelo-soa.jpg" alt="Michelangelo spotted in School of Athens">
+</div>

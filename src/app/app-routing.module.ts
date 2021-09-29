@@ -4,6 +4,7 @@ import { ArtistsComponent } from './artists/artists.component';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent},
   { path: 'artist-detail/:name', component: ArtistDetailComponent}
 ];

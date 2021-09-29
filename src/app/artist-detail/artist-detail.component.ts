@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Artist } from '../artist';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-artist-detail',
@@ -9,16 +8,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ArtistDetailComponent implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute,
-    ) {
+  constructor() { }
 
-   }
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.artist = params['artist.name'];
-    });
+  ngOnInit(): void {
   }
 
   @Input() artist?: Artist;

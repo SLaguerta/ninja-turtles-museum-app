@@ -6,12 +6,12 @@
 </div>
 -->
 <ul>
-    <li *ngFor="let artist of artists" (click)="onSelect(artist)">
-        {{artist.name}}
+    <li *ngFor="let artist of artists">
+        <a routerLink="/artist-detail/{{artist.id}}">{{artist.name}}
+        </a>
     </li>
 </ul>
 
-<app-artist-detail *ngIf="selectedArtist" [artist]="selectedArtist"></app-artist-detail>
 <div>
     <h3>Michelangelo</h3>
     <img src="assets/images/michelangelo-soa.jpg" alt="Michelangelo spotted in School of Athens">

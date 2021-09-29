@@ -6,7 +6,7 @@ import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent},
-  { path: 'artist-detail/:name', component: ArtistDetailComponent}
+  { path: 'artist-detail/:id', component: ArtistDetailComponent}
 ];
 
 @NgModule({

@@ -14,4 +14,9 @@ export class ArtistService {
     const artists = of(ARTISTS);
     return artists;
   }
+
+  getArtist(id: number): Observable<Artist> {
+    const artist = ARTISTS.find( a => a.id === id)!;
+    return of(artist); 
+  }
 }

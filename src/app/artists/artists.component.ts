@@ -20,9 +20,10 @@ export class ArtistsComponent implements OnInit {
   constructor(private artistService: ArtistService) { }
 
 
-  //method to retrieve artists from the service
+  //method returns Observable artist array to retrieve artists asynchronously from the service request
   getArtists(): void {
-    this.artists = this.artistService.getArtists();
+    this.artistService.getArtists()
+    .subscribe(artists => this.artists = artists);
   }
 
   //call getArtists() method in ngOnInit lifesycle hook so anular ngOnInit() will call it at an apporiate time after constructing the ArtistsCOmponent instance

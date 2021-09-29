@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PaintingDataService } from '../painting-data.service';
 
 @Component({
   selector: 'app-paintings',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaintingsComponent implements OnInit {
 
-  constructor() { }
+  paintingsData = null;
 
-  ngOnInit(): void {
+  constructor(private paintingDataSerivce: PaintingDataService) { }
+
+  ngOnInit() {
+    this.paintingDataSerivce.getPaintings().subscribe((data: any) => {
+      this.paintingsData = data;
+    });
   }
 
 }

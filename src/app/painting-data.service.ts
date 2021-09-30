@@ -8,8 +8,8 @@ export class PaintingDataService {
 
   constructor(private http:HttpClient) { }
 
-  //api call to met museum api to return objectids of Donatello paintings
+  //api call to met museum api to return Da Vinci drawing of a bear
   getPaintings() {
-    return this.http.get('https://collectionapi.metmuseum.org/public/collection/v1/search?q=donatello');
+    return this.http.get('https://collectionapi.metmuseum.org/public/collection/v1/objects/459184');
   }
 }

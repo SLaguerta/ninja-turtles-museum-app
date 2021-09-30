@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/core';
 import { PaintingDataService } from '../painting-data.service';
 
 @Component({
@@ -8,14 +8,17 @@ import { PaintingDataService } from '../painting-data.service';
 })
 export class PaintingsComponent implements OnInit {
 
-  paintingsData = null;
+  paintingsData: any = [];
 
   constructor(private paintingDataSerivce: PaintingDataService) { }
 
+  getPaintings(): void {
+    this.paintingDataSerivce.getPaintings().subscribe(paintingsData => this.paintingsData = paintingsData)
+    console.log(this.paintingsData);
+  }
+
   ngOnInit() {
-    this.paintingDataSerivce.getPaintings().subscribe((data: any) => {
-      this.paintingsData = data;
-    });
+    this.getPaintings();
   }
 
 }

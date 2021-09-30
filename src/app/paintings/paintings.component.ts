@@ -13,12 +13,11 @@ export class PaintingsComponent implements OnInit {
   constructor(private paintingDataSerivce: PaintingDataService) { }
 
   getPaintings(): void {
-    this.paintingDataSerivce.getPaintings().subscribe(paintingsData => this.paintingsData = paintingsData)
-    console.log(this.paintingsData);
+    this.paintingDataSerivce.getPaintings().subscribe(paintingsData => this.paintingsData = paintingsData);
   }
 
   ngOnInit() {
-    this.getPaintings();
+
   }
 
 }

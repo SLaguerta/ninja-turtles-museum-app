@@ -23,19 +23,12 @@ export class ArtistsComponent implements OnInit {
   //method returns Observable artist array to retrieve artists asynchronously from the service request
   getArtists(): void {
     this.artistService.getArtists()
-    .subscribe(artists => this.artists = artists);
+      .subscribe(artists => this.artists = artists);
   }
 
   //call getArtists() method in ngOnInit lifesycle hook so anular ngOnInit() will call it at an apporiate time after constructing the ArtistsCOmponent instance
   ngOnInit() {
     this.getArtists();
   }
-
-  selectedArtist?: Artist;
-
-  onSelect(hero: Artist): void {
-    this.selectedArtist = hero;
-  }
-
 
 }

@@ -2,16 +2,19 @@
     <h1>
       Paintings!
     </h1>
-    <button class="btn btn-primary" (click)="getPaintings()">Fetch Data</button>
+    <button class="btn btn-primary" (click)="getPaintings()">Fetch Paintings</button>
+    <!-- <button class="btn btn-primary" (click)="getArtistPaintings({{artist.name}})">Fetch Artist Paintings</button> -->
+
     <!-- seeing the json response -->
-    {{paintingsData | json}}
+    <!-- <div>{{paintingsData | json}}</div> -->
+    
     <!-- getting a property from the object -->
     <img src="{{paintingsData.primaryImage}}"/>
 </div>
 
+
 <!-- iterate through the additional images property of the painting -->
 <div *ngFor="let image of paintingsData.additionalImages">
     <img src="{{image}}"/>
-
 </div>
 

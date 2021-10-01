@@ -1,5 +1,6 @@
 import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/core';
 import { PaintingDataService } from '../painting-data.service';
+import { Artist } from '../artist';
 
 @Component({
   selector: 'app-paintings',
@@ -20,4 +21,5 @@ export class PaintingsComponent implements OnInit {
 
   }
 
+  @Input() artist?: Artist;
 }

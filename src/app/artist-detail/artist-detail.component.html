@@ -1,6 +1,9 @@
 <div *ngIf="artist">
 
   <h2>{{artist.name}} Details</h2>
+  <div *ngIf="artist.name==='Michelangelo'">
+    <img src="assets/images/michelangelo-soa.jpg" alt="Michelangelo spotted in School of Athens">
+  </div>
   <!-- <input type="text" id="artist-name" [(ngModel)]="artist.name"> -->
   <div>
     <p>{{artist.name}}</p>

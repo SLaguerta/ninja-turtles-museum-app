@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Artist } from './artist';
+import { ARTISTS } from './mock-artists';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +17,14 @@ export class PaintingDataService {
   }
 
   // getArtistPaintings()? Create a function to return paitings based on the artist name
+  getArtistPaintings(name: string) {
+    const artist = ARTISTS.find( a => a.name === name)!;
+    const url = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q='
+    let queryParams = new HttpParams();
+    queryParams.append('q', name)
+    return this.http.get(url + name);
 
+  }
 }
+
 

@@ -1,12 +1,13 @@
-<div style="text-align:center">
+<div  style="text-align:center">
     <h1>
       Paintings!
     </h1>
-    <button class="btn btn-primary" (click)="getPaintings()">Fetch Paintings</button>
-    <!-- <button class="btn btn-primary" (click)="getArtistPaintings({{artist.name}})">Fetch Artist Paintings</button> -->
+    <p>{{artist.name}}</p>
+    <!-- <button class="btn btn-primary" (click)="getPaintings()">Fetch Paintings</button> -->
+    <button *ngIf="artist" class="btn btn-primary" (click)="getArtistPaintings(artist.name)">Fetch Artist Paintings</button>
 
-    <!-- seeing the json response -->
-    <!-- <div>{{paintingsData | json}}</div> -->
+    <!-- seeing the json response --> 
+    <div>{{paintingsData | json}}</div>
     
     <!-- getting a property from the object -->
     <img src="{{paintingsData.primaryImage}}"/>

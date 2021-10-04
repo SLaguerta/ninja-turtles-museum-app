@@ -5,7 +5,7 @@ import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { NinjasComponent } from './ninjas/ninjas.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/artists', pathMatch: 'full' },
+  { path: '', redirectTo: '/ninjas', pathMatch: 'full' },
   { path: 'ninjas', component: NinjasComponent},
   { path: 'artists', component: ArtistsComponent},
   { path: 'artist-detail/:id', component: ArtistDetailComponent}

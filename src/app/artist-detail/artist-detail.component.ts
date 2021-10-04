@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Artist } from '../artist';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -28,4 +28,5 @@ export class ArtistDetailComponent implements OnInit {
   }
 
   @Input() artist?: Artist;
+  @Output() aritst?: Artist;
 }

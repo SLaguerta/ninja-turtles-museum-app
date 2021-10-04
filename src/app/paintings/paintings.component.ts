@@ -2,6 +2,7 @@ import { Component, ComponentFactoryResolver, Input, OnInit } from '@angular/cor
 import { PaintingDataService } from '../painting-data.service';
 import { Artist } from '../artist';
 
+
 @Component({
   selector: 'app-paintings',
   templateUrl: './paintings.component.html',
@@ -11,15 +12,23 @@ export class PaintingsComponent implements OnInit {
 
   paintingsData: any = [];
 
-  constructor(private paintingDataSerivce: PaintingDataService) { }
+  @Input() artist: Artist;
+
+
+  constructor(
+    private paintingDataSerivce: PaintingDataService) { }
 
   getPaintings(): void {
     this.paintingDataSerivce.getPaintings().subscribe(paintingsData => this.paintingsData = paintingsData);
   }
 
-  ngOnInit() {
-
+  getArtistPaintings(name: string) {
+    this.paintingDataSerivce.getArtistPaintings(name).subscribe(paintingsData => this.paintingsData = paintingsData);
   }
 
-  @Input() artist?: Artist;
+  ngOnInit() {
+    
+  }
+
+
 }

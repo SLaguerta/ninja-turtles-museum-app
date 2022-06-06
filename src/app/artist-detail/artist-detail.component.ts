@@ -28,5 +28,5 @@ export class ArtistDetailComponent implements OnInit {
   }
 
   @Input() artist?: Artist;
-  @Output() aritst?: Artist;
+
 }
